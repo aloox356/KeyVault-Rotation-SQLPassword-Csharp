@@ -32,7 +32,7 @@
     },
     "resources": [
         {
-            "type": "Microsoft.Sql/servers/providers/roleAssignments",
+            "type": "Microsoft.DBforPostgreSql/flexibleServers/providers/roleAssignments",
             "apiVersion": "2018-09-01-preview",
             "name": "[concat(parameters('sqlServerName'), '/Microsoft.Authorization/', guid(uniqueString(parameters('sqlServerName'))))]",
             "dependsOn": [
