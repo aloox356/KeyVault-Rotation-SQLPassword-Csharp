@@ -74,8 +74,10 @@ namespace Microsoft.KeyVault
             
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = $"{dbName}.postgres.database.azure.com";
+	    builder.nitialCatalog = "postgres";
             builder.UserID = userId;
             builder.Password = password;
+	    builder.Encrypt = true;
     
             //Update password
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
@@ -107,8 +109,10 @@ namespace Microsoft.KeyVault
             var password = secret.Value;
             SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
             builder.DataSource = $"{dbName}.postgres.database.azure.com";
+	    builder.nitialCatalog = "postgres";
             builder.UserID = userId;
             builder.Password = password;
+	    builder.Encrypt = true;
             using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
             {
                 connection.Open();
